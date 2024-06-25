@@ -1,4 +1,4 @@
-document.getElementById('userForm').addEventListener('submit', function(event) {
+/*document.getElementById('userForm').addEventListener('submit', function(event) {
     event.preventDefault();
     
     const username = document.getElementById('username').value;
@@ -32,9 +32,19 @@ document.getElementById('userForm').addEventListener('submit', function(event) {
   
   document.addEventListener('DOMContentLoaded', loadUsers);
 
-  // Register button click event
-document.getElementById('registerButton').addEventListener('click', function() {
-  // Open coleaskey.space in a new tab
-  window.open('https://coleaskey.space', '_blank');
+   // Register button click event
+  document.getElementById('registerButton').addEventListener('click', function() {
+    // Open coleaskey.space in a new tab
+    window.open('https://coleaskey.space', '_blank');
+  });
+
+*/
+
+document.getElementById('fetch').addEventListener('click', () => {
+  fetch('http://127.0.0.1:8000/api/hello')
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById('result').innerText = data.message;
+    });
 });
-  
+ 
